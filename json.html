@@ -1,0 +1,62 @@
+<html>
+    <header>
+    </header>
+    <section>
+        <script>
+            var requestURL = 'http://mdn.github.............';
+            var request = new XMLHttpRequest(); //request objet
+            request.open('GET',requestURL); //take name and birth
+            request.responseType='json';
+            request.send();
+            
+            //waiting for the answer from the server
+            request.onload = function()
+            {
+                var name = request.response;
+                shownames(name);
+                showbirth(birth);
+            }
+            
+            function shownames(jsonObj)
+            {
+                var mytitle = document.createElement('h1');
+                mytitle.textContent = jsonObj['name'];
+                header.appendChild(mytitle);
+                
+                var myParra = document.createElement('p');
+                myParra.textContent= 'birth' + jsonObj['birth'];
+                header.appendChild(myParra);
+            }
+            function birth(jsonObj)
+            {
+                var aux=jsonObj['birth'];
+                for( var i=0; aux.length;i++)
+                    {
+                        var name1 = docuemnt.createElement('h2');
+                        var dob1 = docuemnt.createElement('h4');
+                        var name2 = docuemnt.createElement('h2');
+                        var dob2 = document.createElement('h4');
+                        var name3 = docuemnt.createElement('h2');
+                        var dob3 = document.createElement('h4');
+                    }
+                
+                var search=aux[i];
+                var oldest=0;
+                var recent=0;
+                var cont=0;
+                for (var j=0;search.length;j++)
+                    {
+                        if(search[j]<search[i])
+                            {
+                                oldest=search[j];
+                                i++;
+                            }else{
+                                recent=search[j];
+                                i++;
+                            }
+                    }
+            }
+            
+        </script>
+    </section>
+</html>
